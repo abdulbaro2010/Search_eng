@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:search_ui/lobby%202.dart';
+import 'package:search_ui/lobby.dart';
+
 
 
 void main(){
@@ -16,7 +17,7 @@ class myApp extends StatelessWidget {
       theme: ThemeData(
       primarySwatch: Colors.blue,
       ),
-      home: lobby2(),
+      home: Lobby(),
     );
   }
 }

@@ -11,7 +11,8 @@ class _LobbyState extends State<Lobby> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text("Search Hub", style: TextStyle(fontWeight: FontWeight.bold),),
+        centerTitle: true,
+        title: Text("Search Hub",style: TextStyle(fontWeight: FontWeight.bold),),
         actions: <Widget> [
           IconButton(icon: Icon(Icons.search), onPressed: (){
           showSearch(context: context, delegate: DataSearch());
@@ -24,14 +25,14 @@ class _LobbyState extends State<Lobby> {
 }
 class DataSearch extends SearchDelegate<String>{
 final cities = [
-  "Pak Patan"
+  "Pak Patan",
   "Karachi",
   "Lahore",
   "Islamabad",
   "Quetta",
   "Hyderabad",
   "Sukur",
-  "Multan"
+  "Multan",
   "Gujrat",
   "Khairpur",
   "Kashmir",
@@ -42,7 +43,8 @@ final cities = [
 final RecentCities = [
   "Karachi",
   "Lahore",
-  "Islamabad"
+  "Islamabad",
+  "Sakur",
 ];
 
   @override
@@ -85,7 +87,7 @@ final RecentCities = [
     Widget buildSuggestions(BuildContext context) {
 
     final suggestionList = query.isEmpty ? RecentCities 
-    :cities.where((p) => p.startsWith(query)).toList();
+    : cities.where((p) => p.startsWith(query)).toList();
       
       return ListView.builder(itemBuilder: (context, index) => ListTile(
         onTap: (){
